@@ -5,3 +5,8 @@ Note: This repo is very much a work in progress, see [JMRITrainNode](https://git
 
 ## Required Hardware
 This project uses the [Wiznet Ethernet Hat](https://docs.wiznet.io/Product/Open-Source-Hardware/wiznet_ethernet_hat) for the Raspberry Pi Pico (RP2040), which is available at major retailers such as Core Electronics in Australia. This is used for networking.
+
+## Software Requirements 
+Screen or other serial terminal can be used for debugging
+screen /dev/ttyACM0 115000
+
