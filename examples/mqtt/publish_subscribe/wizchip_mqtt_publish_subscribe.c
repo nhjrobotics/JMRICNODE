@@ -45,13 +45,13 @@
 
 /* MQTT */
 #define MQTT_CLIENT_ID "rpi-pico"
-#define MQTT_USERNAME "wiznet"
-#define MQTT_PASSWORD "0123456789"
+#define MQTT_USERNAME "mqtt-user"
+#define MQTT_PASSWORD "9te%BM3u$ps77dMoR$B7@DJyBZ"
 #define MQTT_PUBLISH_TOPIC "publish_topic"
 #define MQTT_PUBLISH_PAYLOAD "Hello, World!"
-#define MQTT_PUBLISH_PERIOD (1000 * 10) // 10 seconds
 #define MQTT_SUBSCRIBE_TOPIC "subscribe_topic"
-#define MQTT_KEEP_ALIVE 60 // 60 milliseconds
+#define MQTT_PUBLISH_PERIOD (1000 * 10) // 10 seconds
+#define MQTT_KEEP_ALIVE 60              // 60 milliseconds
 
 /**
  * ----------------------------------------------------------------------------------------------------
@@ -62,9 +62,9 @@
 static wiz_NetInfo g_net_info =
     {
         .mac = {0x00, 0x08, 0xDC, 0x12, 0x34, 0x56}, // MAC address
-        .ip = {192, 168, 11, 2},                     // IP address
+        .ip = {192, 168, 168, 230},                     // IP address
         .sn = {255, 255, 255, 0},                    // Subnet Mask
-        .gw = {192, 168, 11, 1},                     // Gateway
+        .gw = {192, 168, 168, 1},                     // Gateway
         .dns = {8, 8, 8, 8},                         // DNS server
 #if _WIZCHIP_ > W5500
         .lla = {0xfe, 0x80, 0x00, 0x00,
@@ -100,7 +100,7 @@ static uint8_t g_mqtt_send_buf[ETHERNET_BUF_MAX_SIZE] = {
 static uint8_t g_mqtt_recv_buf[ETHERNET_BUF_MAX_SIZE] = {
     0,
 };
-static uint8_t g_mqtt_broker_ip[4] = {192, 168, 11, 3};
+static uint8_t g_mqtt_broker_ip[4] = {192, 168, 168, 240};
 static Network g_mqtt_network;
 static MQTTClient g_mqtt_client;
 static MQTTPacket_connectData g_mqtt_packet_connect_data = MQTTPacket_connectData_initializer;
